@@ -1,0 +1,20 @@
+.my-container {
+    display: grid;
+    margin: auto;
+    margin-top: 10px;
+}
+.my-container__div {
+    margin: 0px;
+}
+.btn-grid {
+    background-color: blue;
+    font-size: 20px;
+    margin:15px;
+    display: block;
+    position: absolute;
+    right: 0;
+    outline: none;
+    border: none;
+    color:white;
+    border-radius: 2px;
+}
