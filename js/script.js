@@ -1,4 +1,5 @@
 const defaultGrid = 16;
+const colors = ['blue', 'yellow', 'green', 'black'];
 const myContainer = document.querySelector('.my-container');
 // getting and using the screen's width like a width of my container
 const myContainerWidht = window.screen.width * 0.8;
@@ -8,13 +9,8 @@ myContainer.style.height = `${myContainerHeight}px`;
 
 creatSquares(defaultGrid);
 
-const divs = document.querySelectorAll('.my-container__div');
-Array.from(divs).forEach( element =>  {
-    element.addEventListener('mouseenter',changeBgColor);
-    element.addEventListener('mouseout',restoreBgColor);
-});
 function changeBgColor(e) {
-    e.target.style.backgroundColor = "blue";
+    e.target.style.backgroundColor = `${colors[Math.floor((Math.random())*4)]}`;
 }
 
 function restoreBgColor(e) {
@@ -47,6 +43,12 @@ function creatSquares(squares) {
 
         myContainer.append(div);
     }
+
+    const divs = document.querySelectorAll('.my-container__div');
+    Array.from(divs).forEach( element =>  {
+    element.addEventListener('mouseenter',changeBgColor);
+    element.addEventListener('mouseout',restoreBgColor);
+});
 
 }
 
